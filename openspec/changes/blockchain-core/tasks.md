@@ -21,4 +21,4 @@
 ## 5. Cierre
 
 - [x] 5.1 Ejecutar `uv run pytest` completo y `openspec validate blockchain-core --strict`; ambos deben pasar
-- [ ] 5.2 Revisar cambios con `code-review-graph` (detect_changes) antes de archivar
+- [x] 5.2 Revisar cambios con `code-review-graph` (detect_changes) antes de archivar
