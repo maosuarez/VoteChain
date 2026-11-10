@@ -57,7 +57,7 @@ Sistema de votación para la Facultad de Ingeniería: cada semestre se elige a l
 - Blockchain propia para impedir doble voto, dar trazabilidad y transparencia.
 - Perfil master con administración completa de elecciones, opciones, candidatos y votantes.
 - Código de un solo uso por correo como mecanismo de acceso del votante.
-- Trabajo por changes de OpenSpec (reemplaza las fases lineales del ROADMAP).
+- Trabajo por changes de OpenSpec.
 
 ## Decisiones abiertas
 - Visibilidad del ranking: ¿en vivo, o solo al cierre? (ver en vivo puede sesgar votos; el balón de oro lo publica al final).

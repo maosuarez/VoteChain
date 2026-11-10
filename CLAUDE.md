@@ -1,5 +1,5 @@
 See docs/context.md for full project context (sistema de votación Balón de Oro 3/2/1, roles, código por correo, blockchain).
-Specs y changes: OpenSpec en `openspec/` (flujo `/opsx:*`). ROADMAP.md es el plan histórico; los changes de OpenSpec lo reemplazan.
+Specs y changes: OpenSpec en `openspec/` (flujo `/opsx:*`).
 
 ## Agente global — rol y límites
 
