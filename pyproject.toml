@@ -7,10 +7,16 @@ authors = [
     { name = "Mao Suarez", email = "maosuarezbarrer@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "cryptography>=50.0.2",
+    "fastapi>=0.162.2",
+    "httpx>=0.28.1",
+    "rich>=15.0.0",
+    "uvicorn>=0.54.0",
+]
 
 [project.scripts]
-votechain = "votechain:main"
+votechain = "votechain.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
@@ -19,4 +25,5 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "pytest>=9.2.0",
+    "pyyaml>=6.0.3",
 ]
