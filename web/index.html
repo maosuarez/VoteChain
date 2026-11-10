@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VoteChain - Explorador público</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>VoteChain: explorador público</h1>
+
+  <section>
+    <h2>Verificación de la cadena</h2>
+    <p id="chain-status">Verificando...</p>
+    <p class="note">Se recalculan en tu navegador hashes, enlaces y raíces de Merkle. No se verifican firmas.</p>
+  </section>
+
+  <section>
+    <h2>Elecciones y ranking</h2>
+    <p class="note">El ranking se publica solo al cierre de cada elección.</p>
+    <div id="elections"></div>
+  </section>
+
+  <section>
+    <h2>Comprobante de voto</h2>
+    <form id="receipt-form">
+      <label>ID de transacción de tu papeleta
+        <input id="receipt-tx" required pattern="[0-9a-fA-F]{64}" autocomplete="off">
+      </label>
+      <button type="submit">Verificar inclusión</button>
+    </form>
+    <p id="receipt-result"></p>
+  </section>
+
+  <section>
+    <h2>Bloques</h2>
+    <div id="blocks"></div>
+  </section>
+
+  <script src="verify.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body { font-family: system-ui, sans-serif; max-width: 52rem; margin: 1rem auto; padding: 0 1rem; line-height: 1.4; }
+section { margin-bottom: 1.5rem; }
+.note { color: #555; font-size: .9rem; }
+.ok { color: #176f2c; font-weight: 600; }
+.bad { color: #b00020; font-weight: 600; }
+table { border-collapse: collapse; margin: .5rem 0; }
+th, td { border: 1px solid #ccc; padding: .2rem .5rem; text-align: left; }
+pre { overflow-x: auto; background: #f5f5f5; padding: .5rem; }
+input { width: 100%; font-family: monospace; }
+details { margin: .25rem 0; }

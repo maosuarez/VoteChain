@@ -1,0 +1,674 @@
+{
+ "block_hash": [
+  {
+   "block": {
+    "data": {
+     "transactions": []
+    },
+    "hash": "f114af14d7be78dbd4153904c709762b4331ab37ac447a194e32f64aff25192f",
+    "index": 0,
+    "merkle_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nonce": 0,
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proposer": "",
+    "signature": "",
+    "timestamp": 0
+   },
+   "hash": "f114af14d7be78dbd4153904c709762b4331ab37ac447a194e32f64aff25192f"
+  },
+  {
+   "block": {
+    "data": {
+     "transactions": [
+      {
+       "payload": {
+        "closes_at": 100000,
+        "election_id": "e1",
+        "issuer_key": {
+         "e": 65537,
+         "n": "b1f1a78d03c0054ffc283e796593f999433268d52f9f241ad8da06f32871dee0db68eaa2f87785b252e72e8f085cca21ab892d67021936a156f906c4cb1fc78633538c6fb1b35d438c461eb6d9b3c5c2e958e0d0eddbcb7d506b55b62c772322796a3e072513728d30b5fe0e05cf235c3c13a1c64dad505396a5d5573725a0358fb1d8f1db5b39d388d4521906c3e802ebcef48fecc525f80b7c6db51ee97646c3c4b574fa6c24f4d6a10a5535313603d7e7cc357527013f116c3a2c1df3219a9c2d779fec5934cd2af289482f1562b9cf4021d34067aa7421134941992a88fe6025d6ed2f7a83ad5c3f1e2c64f719ee420f06514347c2fd21c969f7f09aa0a9"
+        },
+        "opens_at": 0
+       },
+       "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+       "signature": "9c4df5c39f8bd464acbcc6308021ec53185651f576c576385dda2e997459775a2c98422961b566cbda7dfd1dc57e3e6e9ad6c6a9509a69159acaccf870242b0a",
+       "timestamp": 1000,
+       "type": "CREATE_ELECTION"
+      }
+     ]
+    },
+    "hash": "218351fbfb69d2f3adfb80997689a96bafbbdc49b252a4ba9edda88c23f19192",
+    "index": 1,
+    "merkle_root": "2a6071177a64b9fc43ece4dabb5ca05d130ff4e47efb76ae68835d2c8bd143c3",
+    "nonce": 0,
+    "prev_hash": "f114af14d7be78dbd4153904c709762b4331ab37ac447a194e32f64aff25192f",
+    "proposer": "",
+    "signature": "",
+    "timestamp": 1000
+   },
+   "hash": "218351fbfb69d2f3adfb80997689a96bafbbdc49b252a4ba9edda88c23f19192"
+  }
+ ],
+ "canonical": [
+  {
+   "input": {
+    "a": [
+     true,
+     null,
+     "x"
+    ],
+    "b": 1,
+    "c": {
+     "y": "ñandú ✓ \u0001",
+     "z": 0
+    }
+   },
+   "output": "{\"a\":[true,null,\"x\"],\"b\":1,\"c\":{\"y\":\"ñandú ✓ \\u0001\",\"z\":0}}"
+  },
+  {
+   "input": {
+    "nested": {
+     "k1": {},
+     "k2": []
+    },
+    "quote": "a\"b\\c\n"
+   },
+   "output": "{\"nested\":{\"k1\":{},\"k2\":[]},\"quote\":\"a\\\"b\\\\c\\n\"}"
+  }
+ ],
+ "chain": [
+  {
+   "data": {
+    "transactions": []
+   },
+   "hash": "f114af14d7be78dbd4153904c709762b4331ab37ac447a194e32f64aff25192f",
+   "index": 0,
+   "merkle_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "nonce": 0,
+   "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 0
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "closes_at": 100000,
+       "election_id": "e1",
+       "issuer_key": {
+        "e": 65537,
+        "n": "b1f1a78d03c0054ffc283e796593f999433268d52f9f241ad8da06f32871dee0db68eaa2f87785b252e72e8f085cca21ab892d67021936a156f906c4cb1fc78633538c6fb1b35d438c461eb6d9b3c5c2e958e0d0eddbcb7d506b55b62c772322796a3e072513728d30b5fe0e05cf235c3c13a1c64dad505396a5d5573725a0358fb1d8f1db5b39d388d4521906c3e802ebcef48fecc525f80b7c6db51ee97646c3c4b574fa6c24f4d6a10a5535313603d7e7cc357527013f116c3a2c1df3219a9c2d779fec5934cd2af289482f1562b9cf4021d34067aa7421134941992a88fe6025d6ed2f7a83ad5c3f1e2c64f719ee420f06514347c2fd21c969f7f09aa0a9"
+       },
+       "opens_at": 0
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "9c4df5c39f8bd464acbcc6308021ec53185651f576c576385dda2e997459775a2c98422961b566cbda7dfd1dc57e3e6e9ad6c6a9509a69159acaccf870242b0a",
+      "timestamp": 1000,
+      "type": "CREATE_ELECTION"
+     }
+    ]
+   },
+   "hash": "218351fbfb69d2f3adfb80997689a96bafbbdc49b252a4ba9edda88c23f19192",
+   "index": 1,
+   "merkle_root": "2a6071177a64b9fc43ece4dabb5ca05d130ff4e47efb76ae68835d2c8bd143c3",
+   "nonce": 0,
+   "prev_hash": "f114af14d7be78dbd4153904c709762b4331ab37ac447a194e32f64aff25192f",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "category": "profesor",
+       "election_id": "e1"
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "b09779633cbacc39125a7dc7bd6c6c79b7c6a18a6c4c14801211449321642503748340ed13b760883ec9871a21f1a532992eb5bd38398cb92f0bc69599810303",
+      "timestamp": 1000,
+      "type": "ADD_CATEGORY"
+     }
+    ]
+   },
+   "hash": "ed22a859cc258b4f62911a09acfaedd392b84b5e37416cee91b31764c3d5bf62",
+   "index": 2,
+   "merkle_root": "a435a85f80cefaca1abffc58ef76e2ceeaf1e7e814d2b1b52f0165f8e571bf51",
+   "nonce": 0,
+   "prev_hash": "218351fbfb69d2f3adfb80997689a96bafbbdc49b252a4ba9edda88c23f19192",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "candidate_id": "A",
+       "category": "profesor",
+       "election_id": "e1",
+       "name": "A"
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "3f620496a04d0d0b7f3eb80f03647c5160f8c0c108c63a356391faa33e35ae393d9e4343a9219ecd35c8caa3222d3744cc60049844871a7e407d75174e442005",
+      "timestamp": 1000,
+      "type": "ADD_CANDIDATE"
+     }
+    ]
+   },
+   "hash": "b240c1932f15a56a5fec1c7418f3233edfa048e88140698139990979c95c88f5",
+   "index": 3,
+   "merkle_root": "8600416724e026615e5670c0abd5b1d0dc27627cdc4d62501790f6eb6ef30565",
+   "nonce": 0,
+   "prev_hash": "ed22a859cc258b4f62911a09acfaedd392b84b5e37416cee91b31764c3d5bf62",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "candidate_id": "B",
+       "category": "profesor",
+       "election_id": "e1",
+       "name": "B"
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "0ec00e441b16093449cdcea00cee207609811e8ff362fb9c57db949557e584391d598925fb57a60305287fee6ae7733651340643ff82b3686a91910e8f683303",
+      "timestamp": 1000,
+      "type": "ADD_CANDIDATE"
+     }
+    ]
+   },
+   "hash": "d97e95d918ae7ce68e69f923553ac02a09418300a38718895cacc3ded07e4343",
+   "index": 4,
+   "merkle_root": "744ffa9c49e4cc1bc189b42870c5f04df5cea5d103e581731c11987f2b9d5639",
+   "nonce": 0,
+   "prev_hash": "b240c1932f15a56a5fec1c7418f3233edfa048e88140698139990979c95c88f5",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "candidate_id": "C",
+       "category": "profesor",
+       "election_id": "e1",
+       "name": "C"
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "1f0bc9b29e665ad7987ecde633780349ff9a4d0ad81daabaf78e72b4ac717fd20934e27c7cb736c7f9ce7b1da639248b022781eddd6d9fe18ba85cb131a10f03",
+      "timestamp": 1000,
+      "type": "ADD_CANDIDATE"
+     }
+    ]
+   },
+   "hash": "b1287e08562aad76ce849cf6f01312ab076765b1c9941d02e4b944af80588bee",
+   "index": 5,
+   "merkle_root": "cb5911446df8a4e9be5197bd8addb9db33326fcc11a0e4982726eb38f9a30987",
+   "nonce": 0,
+   "prev_hash": "d97e95d918ae7ce68e69f923553ac02a09418300a38718895cacc3ded07e4343",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "candidate_id": "D",
+       "category": "profesor",
+       "election_id": "e1",
+       "name": "D"
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "60092e943538696fbf2a1d53a7c9498ac4b786f8b9f50219a748c759acf57bab6c06e3cf9a18a90f86db1a5133809bee8d2cc70f0bb1e7061b0f2f81639e3204",
+      "timestamp": 1000,
+      "type": "ADD_CANDIDATE"
+     }
+    ]
+   },
+   "hash": "5f694a766c31207e04ebda8f49a63dd995f3be348327293fe3e6fe910f4a6d2f",
+   "index": 6,
+   "merkle_root": "6ae697df279ac132b0522442716ab86d17a303b86a480309e855ad05e6c494f0",
+   "nonce": 0,
+   "prev_hash": "b1287e08562aad76ce849cf6f01312ab076765b1c9941d02e4b944af80588bee",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "election_id": "e1"
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "f760d5faece38f0e054f1ee246bffdd863e7c94e89d94ebec69412f45fe369bf37c0cc7ee959a6f9c55f86eec1a9653f8a33440354078d1e7a082c2ed3b72403",
+      "timestamp": 1000,
+      "type": "OPEN_ELECTION"
+     }
+    ]
+   },
+   "hash": "6ea6e3cec7d6186b34aad55d97454753fff522a2ba43b5f5930e69397a9d3795",
+   "index": 7,
+   "merkle_root": "6ac1c0ad4359255b23187b2b79d8a0967db8799afb742b705530ddb4ad9965f3",
+   "nonce": 0,
+   "prev_hash": "5f694a766c31207e04ebda8f49a63dd995f3be348327293fe3e6fe910f4a6d2f",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "category": "profesor",
+       "credential_sig": "9e625463505042fc68869d7115b2a58a0402771f5f05f89db3801af1719cd3baad72e6ac03549974136ac3c1b8ffc79fc1fb67df95f6bebbbc4b35928c366e4a31611d90b8fce3cb9120b01682980fa7cdd63f2f309366bcf25072b8d605b145951f4422a79b64a54e824658a8669558099e56206141317c310a80315ac558c85888b152a2b5f5bd4d5d3a23fa8b6a95a44cc8428dd5f49de4daab1552b984cf7cb2ee3fc5f6f3529f4234d6366b32e8f69b2f28a9c2b0014a407090d2acacb2882c29a054c595026f9dab009625f37e42d1d68741c073ba270f73444a911b2c068aeb4fb6a592b17b33c61d51a2c57932380e7e996b7d1c5d05d163cbccee50",
+       "election_id": "e1",
+       "picks": [
+        "A",
+        "B",
+        "C"
+       ]
+      },
+      "sender": "906d95e881c0d271a179ca1aa81a0c2ef056be1d05c877e80d3f91a564d0e9e0",
+      "signature": "6f6fe71b87ba938d5d69283c95068c6baeab74d4c6e89ca3b37cc62d113be5978a5d66882d29e715d3e5402e771c5324d112ebaebbdbe3be0cffb4c069f6180a",
+      "timestamp": 1000,
+      "type": "CAST_BALLOT"
+     }
+    ]
+   },
+   "hash": "6d7103871d2f08db2f7b1921788fde641a44022913e3256593f4c101de3d5ff9",
+   "index": 8,
+   "merkle_root": "c67630568c9d412666af960e2debf0aea34d7ec37487030367091da2db270096",
+   "nonce": 0,
+   "prev_hash": "6ea6e3cec7d6186b34aad55d97454753fff522a2ba43b5f5930e69397a9d3795",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "category": "profesor",
+       "credential_sig": "a0d150413b85ee80f751a97393100dddb9c09834ed9a47963a4c78fbe3fe60050e8bc009252cec6868ba0ef9b212eab5103dcfbd21a2d48b3e4ed1ff23949125bc387cc89bf37873cab9f5dee40522197a1fbd465d3f4dc955730202d29f3d0f8692d70ad069c72f665671ea044a001900c8aa14829b950dcea5bf763bfbaabd62c56df79f4dd7e0b2d0eb98ee44dcc967564b003ed4b95902f6f01a9a93612a2ad9204bc9bbed2d56392312d4f0956515d08b0e4d3b3265259d9351e4c4219e28c646e280d6eddae2576a112bf9ff99a00e275a3c645dd1b4ffbe6ecc3bd8d02ca6dc4eecda2c1de0a09ffc9c4a0eb092639b911f6ebf00187b13fc9057ad83",
+       "election_id": "e1",
+       "picks": [
+        "B",
+        "A",
+        "D"
+       ]
+      },
+      "sender": "519e645d7341f1a5f812de5cbb751f7b02c5f5780abdfbf569f7439bbc7a811b",
+      "signature": "17d4fd12cc85acba95afda195862fd34ced82e0ebcced11fac99120498bac0558e5eb5b3e9ddeec3ac50b0c8aa028b46394dde8946dcd03b5e0943559ea66202",
+      "timestamp": 1000,
+      "type": "CAST_BALLOT"
+     }
+    ]
+   },
+   "hash": "0e739a98e504e78119288c24fb0b2e712a9addc34a6a89d425e717f10f23a975",
+   "index": 9,
+   "merkle_root": "462beb72bb4b6c01f359cf297fe71951b41b18beb2a8006630d9af245f519bad",
+   "nonce": 0,
+   "prev_hash": "6d7103871d2f08db2f7b1921788fde641a44022913e3256593f4c101de3d5ff9",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  },
+  {
+   "data": {
+    "transactions": [
+     {
+      "payload": {
+       "election_id": "e1"
+      },
+      "sender": "0a7329c46285d7a71f32b5261b5e1e112ca9cdc36526d79c8b52a4d49cce0e70",
+      "signature": "76cb5c68d2f726a6354d9e7d9b83fc055afefc3df541baa116324c9c74acde78b37a11af3217545572651c00c52b8a6d9127a78c44aeaf75435f986c86a5e900",
+      "timestamp": 1000,
+      "type": "CLOSE_ELECTION"
+     }
+    ]
+   },
+   "hash": "d0341959ba7319ac4cffc8c7ce37993cf0e2eacd7fdcbcdabd364afd58e5ca3f",
+   "index": 10,
+   "merkle_root": "c8d2e5574e8484c6b30dc3e240daa2d60d21a16bbb687a3f2e3353faafaee3b1",
+   "nonce": 0,
+   "prev_hash": "0e739a98e504e78119288c24fb0b2e712a9addc34a6a89d425e717f10f23a975",
+   "proposer": "",
+   "signature": "",
+   "timestamp": 1000
+  }
+ ],
+ "election_id": "e1",
+ "merkle": [
+  {
+   "proofs": [],
+   "root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "txs": []
+  },
+  {
+   "proofs": [
+    []
+   ],
+   "root": "37e501a5e97c0318afc8d84d21f94250259106c5871af6d04d1c6ec5144102c1",
+   "txs": [
+    {
+     "payload": {
+      "i": 0,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 0,
+     "type": "T"
+    }
+   ]
+  },
+  {
+   "proofs": [
+    [
+     {
+      "hash": "8f6fb879b560e2ff801805ed38826e40203717077f42b2af769340e8551a9a9b",
+      "side": "right"
+     }
+    ],
+    [
+     {
+      "hash": "37e501a5e97c0318afc8d84d21f94250259106c5871af6d04d1c6ec5144102c1",
+      "side": "left"
+     }
+    ]
+   ],
+   "root": "73a3a781fb3e934579c513df7bbd3b912693dd6cb166cc4c139b4faf93815bc0",
+   "txs": [
+    {
+     "payload": {
+      "i": 0,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 0,
+     "type": "T"
+    },
+    {
+     "payload": {
+      "i": 1,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 1,
+     "type": "T"
+    }
+   ]
+  },
+  {
+   "proofs": [
+    [
+     {
+      "hash": "8f6fb879b560e2ff801805ed38826e40203717077f42b2af769340e8551a9a9b",
+      "side": "right"
+     },
+     {
+      "hash": "708ea6a63f0cd204e3e9bb4f15785a13876c0b755f67821c116d741f02665ecc",
+      "side": "right"
+     }
+    ],
+    [
+     {
+      "hash": "37e501a5e97c0318afc8d84d21f94250259106c5871af6d04d1c6ec5144102c1",
+      "side": "left"
+     },
+     {
+      "hash": "708ea6a63f0cd204e3e9bb4f15785a13876c0b755f67821c116d741f02665ecc",
+      "side": "right"
+     }
+    ],
+    [
+     {
+      "hash": "73a3a781fb3e934579c513df7bbd3b912693dd6cb166cc4c139b4faf93815bc0",
+      "side": "left"
+     }
+    ]
+   ],
+   "root": "ef1231c47234c70a18f74732fc4e3b54052d1c95411b321000e1128e4387b9c5",
+   "txs": [
+    {
+     "payload": {
+      "i": 0,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 0,
+     "type": "T"
+    },
+    {
+     "payload": {
+      "i": 1,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 1,
+     "type": "T"
+    },
+    {
+     "payload": {
+      "i": 2,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 2,
+     "type": "T"
+    }
+   ]
+  },
+  {
+   "proofs": [
+    [
+     {
+      "hash": "8f6fb879b560e2ff801805ed38826e40203717077f42b2af769340e8551a9a9b",
+      "side": "right"
+     },
+     {
+      "hash": "18d7dbb44c931d3fd6b3a90346c50290065ff657e252f52973993a0d2946543c",
+      "side": "right"
+     },
+     {
+      "hash": "f26a028dbea2feeaaeae588efdcc71263568206e9b431378de4a744297273d61",
+      "side": "right"
+     }
+    ],
+    [
+     {
+      "hash": "37e501a5e97c0318afc8d84d21f94250259106c5871af6d04d1c6ec5144102c1",
+      "side": "left"
+     },
+     {
+      "hash": "18d7dbb44c931d3fd6b3a90346c50290065ff657e252f52973993a0d2946543c",
+      "side": "right"
+     },
+     {
+      "hash": "f26a028dbea2feeaaeae588efdcc71263568206e9b431378de4a744297273d61",
+      "side": "right"
+     }
+    ],
+    [
+     {
+      "hash": "1952baeb2b896c4b60e585995d72453c0b74d9156305071f562dfe7addd4a5ee",
+      "side": "right"
+     },
+     {
+      "hash": "73a3a781fb3e934579c513df7bbd3b912693dd6cb166cc4c139b4faf93815bc0",
+      "side": "left"
+     },
+     {
+      "hash": "f26a028dbea2feeaaeae588efdcc71263568206e9b431378de4a744297273d61",
+      "side": "right"
+     }
+    ],
+    [
+     {
+      "hash": "708ea6a63f0cd204e3e9bb4f15785a13876c0b755f67821c116d741f02665ecc",
+      "side": "left"
+     },
+     {
+      "hash": "73a3a781fb3e934579c513df7bbd3b912693dd6cb166cc4c139b4faf93815bc0",
+      "side": "left"
+     },
+     {
+      "hash": "f26a028dbea2feeaaeae588efdcc71263568206e9b431378de4a744297273d61",
+      "side": "right"
+     }
+    ],
+    [
+     {
+      "hash": "b1c5305a6a4dd89b5327c74a85190cbcfdf189241e0647e0d3c0715f1ebcbb09",
+      "side": "left"
+     }
+    ]
+   ],
+   "root": "cd5381e1b5b2713cdb653d84cc509e8076cc314e06089da23e1f198315d73ac3",
+   "txs": [
+    {
+     "payload": {
+      "i": 0,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 0,
+     "type": "T"
+    },
+    {
+     "payload": {
+      "i": 1,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 1,
+     "type": "T"
+    },
+    {
+     "payload": {
+      "i": 2,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 2,
+     "type": "T"
+    },
+    {
+     "payload": {
+      "i": 3,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 3,
+     "type": "T"
+    },
+    {
+     "payload": {
+      "i": 4,
+      "s": "ñ"
+     },
+     "sender": "s",
+     "signature": "",
+     "timestamp": 4,
+     "type": "T"
+    }
+   ]
+  }
+ ],
+ "receipts": [
+  {
+   "block_hash": "6d7103871d2f08db2f7b1921788fde641a44022913e3256593f4c101de3d5ff9",
+   "block_index": 8,
+   "merkle_root": "c67630568c9d412666af960e2debf0aea34d7ec37487030367091da2db270096",
+   "proof": [],
+   "tx_id": "b1555c3a1f82244bba3fcb0900f20c48eb1642127495e3619b7b7c8d40928a5f"
+  },
+  {
+   "block_hash": "0e739a98e504e78119288c24fb0b2e712a9addc34a6a89d425e717f10f23a975",
+   "block_index": 9,
+   "merkle_root": "462beb72bb4b6c01f359cf297fe71951b41b18beb2a8006630d9af245f519bad",
+   "proof": [],
+   "tx_id": "d6d5d7da0d858dfc5156ef37d7ced67d95d7d723f7332db1453972eb105537d2"
+  }
+ ],
+ "sha256": [
+  {
+   "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "hex": ""
+  },
+  {
+   "digest": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+   "hex": "616263"
+  },
+  {
+   "digest": "41edece42d63e8d9bf515a9ba6932e1c20cbc9f5a5d134645adb5db1b9737ea3",
+   "hex": "61616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161"
+  }
+ ],
+ "tally": {
+  "profesor": [
+   {
+    "candidate_id": "A",
+    "firsts": 1,
+    "name": "A",
+    "points": 5,
+    "rank": 1,
+    "seconds": 1,
+    "tied": true
+   },
+   {
+    "candidate_id": "B",
+    "firsts": 1,
+    "name": "B",
+    "points": 5,
+    "rank": 1,
+    "seconds": 1,
+    "tied": true
+   },
+   {
+    "candidate_id": "C",
+    "firsts": 0,
+    "name": "C",
+    "points": 1,
+    "rank": 3,
+    "seconds": 0,
+    "tied": true
+   },
+   {
+    "candidate_id": "D",
+    "firsts": 0,
+    "name": "D",
+    "points": 1,
+    "rank": 3,
+    "seconds": 0,
+    "tied": true
+   }
+  ]
+ }
+}
