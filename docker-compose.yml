@@ -78,7 +78,7 @@ services:
       context: ./frontend
       args:
         VOTECHAIN_API_URL: http://api:8000
-        NEXT_PUBLIC_EXPLORER_URL: http://127.0.0.1:${VOTECHAIN_API_PORT:-8000}/explorer/
+        NEXT_PUBLIC_EXPLORER_URL: http://${VOTECHAIN_PUBLIC_HOST:-127.0.0.1}:${VOTECHAIN_API_PORT:-8000}/explorer/
     restart: unless-stopped
     ports: ["${VOTECHAIN_BIND:-127.0.0.1}:${VOTECHAIN_WEB_PORT:-3000}:3000"]
     depends_on:
