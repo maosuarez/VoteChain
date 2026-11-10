@@ -1,0 +1,93 @@
+# Piloto VoteChain: 3 validadores PoA (5 con el perfil `extended`) + API + frontend.
+# Configuración solo por variables de entorno; genera `.env` con `votechain init`.
+# Los validadores NO publican puertos al host; API y frontend solo en 127.0.0.1
+# (cámbialo con VOTECHAIN_BIND detrás de un proxy TLS: ver docs/checklist-seguridad.md).
+
+x-backend: &backend
+  build: .
+  image: votechain-backend
+  restart: unless-stopped
+
+x-node-env: &node-env
+  VOTECHAIN_VALIDATORS: ${VOTECHAIN_VALIDATORS:?ejecuta `votechain init`}
+  VOTECHAIN_PEERS: ${VOTECHAIN_PEERS:?ejecuta `votechain init`}
+  VOTECHAIN_DATA_DIR: /data
+
+x-validator: &validator
+  <<: *backend
+  command: ["votechain", "serve-node"]
+  expose: ["9000"]
+  healthcheck:
+    test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://127.0.0.1:9000/p2p/status', timeout=3)"]
+    interval: 5s
+    timeout: 5s
+    retries: 12
+
+services:
+  v1:
+    <<: *validator
+    environment: {<<: *node-env, VOTECHAIN_NODE_ID: v1, VOTECHAIN_NODE_KEY: "${VOTECHAIN_NODE_KEY_V1:-}"}
+    volumes: ["v1-data:/data"]
+  v2:
+    <<: *validator
+    environment: {<<: *node-env, VOTECHAIN_NODE_ID: v2, VOTECHAIN_NODE_KEY: "${VOTECHAIN_NODE_KEY_V2:-}"}
+    volumes: ["v2-data:/data"]
+  v3:
+    <<: *validator
+    environment: {<<: *node-env, VOTECHAIN_NODE_ID: v3, VOTECHAIN_NODE_KEY: "${VOTECHAIN_NODE_KEY_V3:-}"}
+    volumes: ["v3-data:/data"]
+  v4:
+    <<: *validator
+    profiles: ["extended"]
+    environment: {<<: *node-env, VOTECHAIN_NODE_ID: v4, VOTECHAIN_NODE_KEY: "${VOTECHAIN_NODE_KEY_V4:-}"}
+    volumes: ["v4-data:/data"]
+  v5:
+    <<: *validator
+    profiles: ["extended"]
+    environment: {<<: *node-env, VOTECHAIN_NODE_ID: v5, VOTECHAIN_NODE_KEY: "${VOTECHAIN_NODE_KEY_V5:-}"}
+    volumes: ["v5-data:/data"]
+
+  api:
+    <<: *backend
+    command: ["votechain", "serve-api"]
+    environment:
+      <<: *node-env
+      VOTECHAIN_NODE_ID: api
+      VOTECHAIN_MASTER_TOKEN: ${VOTECHAIN_MASTER_TOKEN:?ejecuta `votechain init`}
+      VOTECHAIN_MASTER_KEY: ${VOTECHAIN_MASTER_KEY:?ejecuta `votechain init`}
+      VOTECHAIN_SMTP_HOST: "${VOTECHAIN_SMTP_HOST:-}"
+      VOTECHAIN_SMTP_PORT: "${VOTECHAIN_SMTP_PORT:-587}"
+      VOTECHAIN_SMTP_USER: "${VOTECHAIN_SMTP_USER:-}"
+      VOTECHAIN_SMTP_PASSWORD: "${VOTECHAIN_SMTP_PASSWORD:-}"
+      VOTECHAIN_SMTP_FROM: "${VOTECHAIN_SMTP_FROM:-votechain@localhost}"
+      VOTECHAIN_SMTP_STARTTLS: "${VOTECHAIN_SMTP_STARTTLS:-1}"
+    volumes: ["api-data:/data"]
+    ports: ["${VOTECHAIN_BIND:-127.0.0.1}:${VOTECHAIN_API_PORT:-8000}:8000"]
+    depends_on:
+      v1: {condition: service_healthy}
+      v2: {condition: service_healthy}
+      v3: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://127.0.0.1:8000/p2p/status', timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VOTECHAIN_API_URL: http://api:8000
+        NEXT_PUBLIC_EXPLORER_URL: http://127.0.0.1:${VOTECHAIN_API_PORT:-8000}/explorer/
+    restart: unless-stopped
+    ports: ["${VOTECHAIN_BIND:-127.0.0.1}:${VOTECHAIN_WEB_PORT:-3000}:3000"]
+    depends_on:
+      api: {condition: service_healthy}
+
+volumes:
+  v1-data:
+  v2-data:
+  v3-data:
+  v4-data:
+  v5-data:
+  api-data:

@@ -1,0 +1,11 @@
+.git
+.venv
+.env
+.claude
+__pycache__
+*.pyc
+tests
+openspec
+docs
+frontend
+data

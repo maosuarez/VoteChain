@@ -20,20 +20,20 @@ Sistema de votación para la Facultad de Ingeniería: cada semestre se elige a l
 - Cada votante habilitado recibe por correo institucional un **código de un solo uso**, con expiración, guardado solo como hash en el servidor.
 - El código prueba elegibilidad y se canjea por una **credencial anónima** (firma ciega, ver abajo); el voto se emite con esa credencial, no con la identidad.
 - Objetivo de seguridad: el sistema sabe *que* una persona habilitada votó (para impedir doble voto) pero no *por quién* votó, y el master no puede vincular credencial con persona.
-- Hasta que exista la capa de firmas ciegas, el MVP usa voto pseudónimo (clave por votante), declarado como limitación.
+- La credencial anónima (firma ciega RSA, `blind.py`) ya conecta código y voto; el voto usa una clave de credencial, no la identidad. Límite conocido: correlación por tiempo/IP entre canje y voto.
 
 ## Stack
 - Python (lenguaje principal), `cryptography` (SHA-256, Ed25519, RSA para firmas ciegas), `pytest`
 - API: FastAPI
 - CLI: Rich
-- Web: Next.js (interfaz de votación, panel master, explorador/auditoría pública)
+- Web: Next.js en `frontend/` (App Router, TypeScript; `npm install && npm run dev|build|start|test`): flujo del votante `/votar` (correo+código → papeleta 3/2/1 → revisar → comprobante `tx_id`) y panel master `/master` (Bearer token estático de `master-admin-api`, sin voto en blanco). Cripto del votante en el navegador (`@noble`, BigInt; clave Ed25519, firma ciega RSA FDH, firma de `CAST_BALLOT`) con paridad exacta probada contra `tests/vectors/voter_vectors.json` (`python -m tests.make_voter_vectors`). Proxy `/api/*` → `VOTECHAIN_API_URL` (def. `http://127.0.0.1:8000`, sin CORS); enlace al explorador vía `NEXT_PUBLIC_EXPLORER_URL` (def. `http://127.0.0.1:8000/explorer/`). Límites: sin contadores de censo/códigos ni deshabilitar votante (la API no los expone); credencial en `sessionStorage` hasta mostrar el comprobante. Explorador/auditoría pública ya implementado en `web/` (JS vanilla sin build, servido por la API en `/explorer`; verifica hashes/Merkle y conteo en el navegador, comprobante por `tx_id` vía `/chain/receipts/{tx_id}`; paridad con Python probada con vectores y Node)
 - Correo: SMTP (gratuito; proveedor por definir)
-- Despliegue local: Docker / docker compose (3-5 nodos)
+- Despliegue: `docker-compose.yml` (3 validadores, 5 con perfil `extended`, API, frontend); `votechain init` genera `.env`. Persistencia en `/data` por servicio (cadena JSON atómica validada al arrancar, SQLite de censo/códigos, claves de emisión 0600). CLI `votechain` (Rich): `init`, `status`, `check`, `election`, `audit`, `serve-node/api`. SMTP por `VOTECHAIN_SMTP_*` (sin host: buzón de desarrollo en claro). E2E: `tests/test_pilot_e2e.py` / `python -m votechain.e2e`. Guías: `docs/guia-master.md`, `docs/checklist-seguridad.md`, `docs/guia-auditoria.md` (auditoría humana de un tercero: PENDIENTE)
 - Especificaciones y cambios: **OpenSpec** (`openspec/`), idioma español
 
 ## Arquitectura
 - Cadena permisionada propia, sin Ethereum ni testnets.
-- Consenso: PoW simple primero (didáctico), luego reemplazado por Proof of Authority (validadores conocidos, round-robin).
+- Consenso: PoA implementado (`consensus.py`: validadores conocidos, turno `index mod N`, bloques firmados; `network.py`: nodos P2P con transporte inyectable, sync y resolución de forks). PoW queda solo como modo didáctico (cadena sin validadores). En el piloto la API corre como nodo observador de la red PoA sobre HTTP (`p2p_http.py`; `create_app(node=...)`, `create_api_from_env`), espera la inclusión del bloque y responde 503 si no se confirma; sin `node` conserva el modo PoW local (tests).
 - Capas: `block` → `blockchain` → `transactions` → `network (P2P)` → `consensus` → `voting (dominio)` → `auth (códigos + credenciales)` → `api / cli / web`.
 - La cadena es un log inmutable; las reglas de votación (límite de 3 picks, puntos 3/2/1, un voto por credencial, ventana de tiempo) son validación determinista sobre ese log.
 - Datos mutables y sensibles (lista de votantes, hashes de códigos, correos) viven fuera de la cadena; en la cadena solo compromisos/hashes y votos.
@@ -60,11 +60,11 @@ Sistema de votación para la Facultad de Ingeniería: cada semestre se elige a l
 - Trabajo por changes de OpenSpec.
 
 ## Decisiones abiertas
-- Visibilidad del ranking: ¿en vivo, o solo al cierre? (ver en vivo puede sesgar votos; el balón de oro lo publica al final).
+- Visibilidad del ranking: API y explorador lo publican solo al cierre (decidido en `master-admin-api`, reversible); las papeletas en la cadena pública permiten derivar un parcial.
 - Proveedor SMTP y dominio de correo institucional aceptado.
 - Quién forma el censo (fuente de la lista de votantes) y de candidatos.
 - Número de validadores PoA y quiénes los operan (facultad, estudiantes, auditor externo).
-- ¿Se permite votar en blanco / menos de 3 picks?
+- Voto en blanco / menos de 3 picks: la UI v1 no lo permite (obligatorio completar 3 por categoría).
 
 ## Contexto de negocio
 - Usuario final: comunidad de la Facultad de Ingeniería (votantes) y administradores del proceso (master).

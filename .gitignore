@@ -8,3 +8,13 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/next-env.d.ts
+frontend/*.tsbuildinfo
+
+# Piloto: secretos y datos locales (nunca versionar)
+.env
+data/
